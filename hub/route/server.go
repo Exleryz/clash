@@ -206,6 +206,7 @@ func getLogs(w http.ResponseWriter, r *http.Request) {
 	if wsConn == nil {
 		w.Header().Set("Content-Type", "application/json")
 		render.Status(r, http.StatusOK)
+		return
 	}
 
 	ch := make(chan log.Event, 1024)
